@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SkillNet models hierarchical skill attributes and skill-contextualized mixture-of-experts routing for compositional generalization in vision-language action models.">
+  <meta property="og:title" content="SkillNet: Hierarchical Skill Modeling for Compositional Generalization in Vision-Language Action Models">
+  <meta property="og:description" content="ICML 2026 paper on hierarchical skill modeling for compositional generalization in robotic vision-language action models.">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="static/images/skillnet_pipeline.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:title" content="SkillNet">
+  <meta name="twitter:description" content="Hierarchical Skill Modeling for Compositional Generalization in Vision-Language Action Models">
+  <meta name="twitter:image" content="static/images/skillnet_pipeline.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="SkillNet, vision-language action model, robotic manipulation, compositional generalization, skill modeling, mixture-of-experts, ICML 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SkillNet: Hierarchical Skill Modeling for Compositional Generalization in Vision-Language Action Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+  <section class="hero publication-hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="brand-mark" aria-hidden="true">
+              <span>S</span>
+            </div>
+            <h1 class="title is-1 publication-title">SkillNet</h1>
+            <h2 class="subtitle is-3 publication-subtitle">
+              Hierarchical Skill Modeling for Compositional Generalization in Vision-Language Action Models
+            </h2>
+            <div class="publication-venue">ICML 2026</div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Senwei Xie<sup>1,2</sup>,</span>
+              <span class="author-block">Yuntian Zhang<sup>1,2</sup>,</span>
+              <span class="author-block">Zhenzhou Tan<sup>1,2</sup>,</span>
+              <span class="author-block"><a href="https://vipl.ict.ac.cn/people/_rpwang/">Ruiping Wang</a><sup>1,2</sup>,</span>
+              <span class="author-block">Pengwei Wang<sup>3</sup>,</span>
+              <span class="author-block"><a href="mailto:shanghang@pku.edu.cn">Shanghang Zhang</a><sup>4</sup>,</span>
+              <span class="author-block"><a href="mailto:xlchen@ict.ac.cn">Xilin Chen</a><sup>1,2</sup></span>
+            </div>
+
+            <div class="is-size-6 publication-affiliations">
+              <span><sup>1</sup>Institute of Computing Technology, Chinese Academy of Sciences</span>
+              <span><sup>2</sup>University of Chinese Academy of Sciences</span>
+              <span><sup>3</sup>Beijing Academy of Artificial Intelligence</span>
+              <span><sup>4</sup>Peking University</span>
+            </div>
+
+            <div class="publication-links">
+              <a class="button is-dark is-rounded" href="static/pdfs/skillnet.pdf" target="_blank">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+              <a class="button is-light is-rounded is-disabled" aria-disabled="true">
+                <span class="icon"><i class="fas fa-code"></i></span>
+                <span>Code Coming Soon</span>
+              </a>
+              <a class="button is-light is-rounded" href="#demos">
+                <span class="icon"><i class="fas fa-video"></i></span>
+                <span>Demos</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section overview-video-section" id="overview-video">
+    <div class="container is-max-desktop">
+      <video class="overview-video" autoplay controls muted loop playsinline>
+        <source src="static/videos/overview_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <section class="section overall-method-section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Overall Method</h2>
+      <figure class="teaser-figure">
+        <img src="static/images/skillnet_pipeline.png" alt="Overall SkillNet method details">
+      </figure>
+      <h3 class="subtitle has-text-centered teaser-caption">
+        SkillNet first builds contextualized hierarchical skill embeddings, then uses task-relevant skill embeddings to condition expert routing in SCMoE blocks.
+      </h3>
+    </div>
+  </section>
+
+  <section class="section abstract-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 section-title">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Transfer across diverse task compositions and unseen behaviors remains a significant challenge for vision-language action (VLA) models. Skills are repeatable and atomic components for various tasks, and similarities shared with different skills provide evidence for transferability across behaviors. However, existing skill-centric methods often lack a hierarchy that captures similarities and differences across skills, and they lack a mechanism to express transferable skill attributes in a structured parametric space.
+            </p>
+            <p>
+              SkillNet models skill attributes in a hierarchical way and regulates compositional model structure with transferable skill attributes. It exploits motion code and the VerbNet Framework to model mechanical properties and semantic roles, then leverages skill-contextualized Mixture-of-Experts routing to enable similar expert activations for similar skills. On zero-shot and few-shot transfer experiments in simulators and real-world environments, SkillNet improves performance by 16.0% and 23.9%, while also achieving state-of-the-art in-domain performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section highlights-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">Highlights</h2>
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <div class="highlight-number">16.0%</div>
+          <h3>Zero-Shot Compositional Transfer</h3>
+          <p>SkillNet outperforms baseline VLAs on unseen task compositions in the proposed LIBERO-Skill benchmark.</p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-number">23.9%</div>
+          <h3>Few-Shot Behavior Transfer</h3>
+          <p>Hierarchical skill attributes support rapid transfer from learned skills to previously unseen behaviors.</p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-number">SOTA</div>
+          <h3>In-Domain Performance</h3>
+          <p>The skill-conditioned routing design remains beneficial under standard simulation and real-world settings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section overview-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">Compositional Generalization</h2>
+      <div class="columns is-vcentered method-row">
+        <div class="column is-half">
+          <figure class="method-figure">
+            <img src="static/images/skillnet_overview.png" alt="SkillNet compositional generalization overview">
+          </figure>
+        </div>
+        <div class="column is-half">
+          <div class="content has-text-justified">
+            <p>
+              Task-driven VLAs learn isolated task mappings. SkillNet instead treats long-horizon instructions as compositions of reusable skills, so repeated skills and similar skills can share behavior components across different task instances.
+            </p>
+            <p>
+              This overview motivates the core design: hierarchical skill modeling exposes transferable skill attributes, and skill-conditioned expert pathways turn those attributes into reusable model structure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">Hierarchical Skill Modeling</h2>
+      <div class="columns is-vcentered method-row">
+        <div class="column is-half">
+          <figure class="method-figure">
+            <img src="static/images/skillnet_hsm.png" alt="Motion code and VerbNet hierarchy">
+          </figure>
+        </div>
+        <div class="column is-half">
+          <div class="content has-text-justified">
+            <p>
+              HSM builds a three-level skill hierarchy: motion categories capture mechanical properties such as contact, deformation, trajectory constraints, and tool usage; VerbNet classes summarize semantic roles and action relations; skill instances provide fine-grained realizations such as brush, click, wipe, push, and press.
+            </p>
+            <p>
+              This hierarchy converts free-form task descriptions into structured skill attributes. The attributes become learnable skill tokens and contextualized skill embeddings, giving the policy an explicit bridge between task language and reusable behavior components.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section scm-section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Skill-Contextualized MoE</h2>
+      <figure class="method-figure wide-method-figure">
+        <img src="static/images/skillnet_pipeline.png" alt="SkillNet overall method with Skill-Contextualized MoE">
+      </figure>
+      <div class="content has-text-justified method-copy">
+        <p>
+          SCMoE uses hierarchical skill embeddings as soft routing conditions. A stage-aware cross-attention module produces task-relevant skill context, which guides the gate to activate shared experts and skill experts across MoE layers.
+        </p>
+        <p>
+          Similar skills therefore tend to induce similar expert activations, while different skills can still form distinct expert combinations. This gives the VLA model a compositional parametric space aligned with the skill hierarchy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section demos-section" id="demos">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">Real-Robot Demos</h2>
+      <div class="demo-grid">
+        <article class="demo-slot">
+          <div class="demo-media">
+            <video class="demo-video" autoplay controls muted loop playsinline data-playback-rate="2">
+              <source src="static/videos/few_shot_demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3>Few-Shot Transfer</h3>
+          <p>A real-robot demo slot reserved for transferring to an unseen behavior with a small number of demonstrations.</p>
+        </article>
+        <article class="demo-slot">
+          <div class="demo-media">
+            <video class="demo-video" autoplay controls muted loop playsinline data-playback-rate="2">
+              <source src="static/videos/long_horizon_demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3>Long-Horizon Task</h3>
+          <p>A real-robot demo slot reserved for a composed long-horizon manipulation task with repeated and similar skills.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section citation-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">Citation</h2>
+      <pre><code>@inproceedings{xie2026skillnet,
+  title={SkillNet: Hierarchical Skill Modeling for Compositional Generalization in Vision-Language Action Models},
+  author={Xie, Senwei and Zhang, Yuntian and Tan, Zhenzhou and Wang, Ruiping and Wang, Pengwei and Zhang, Shanghang and Chen, Xilin},
+  booktitle={Proceedings of the 43rd International Conference on Machine Learning},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <p>
+          Website adapted from an academic project page template.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.demo-video').forEach((video) => {
+      const rate = Number(video.dataset.playbackRate || 2);
+      const applyRate = () => {
+        video.playbackRate = rate;
+      };
+      video.addEventListener('loadedmetadata', applyRate);
+      video.addEventListener('ratechange', () => {
+        if (video.playbackRate !== rate) {
+          video.playbackRate = rate;
+        }
+      });
+      applyRate();
+    });
+  </script>
+</body>
+</html>
