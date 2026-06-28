@@ -93,6 +93,23 @@ a:hover {
   margin: 0 0.08rem;
 }
 
+.corresponding-icon {
+  color: #667782;
+  display: inline-block;
+  font-size: 0.72em;
+  margin-left: 0.18rem;
+  position: relative;
+  top: -0.02em;
+}
+
+.corresponding-authors {
+  color: #667782;
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  margin-top: 0.15rem;
+}
+
 .publication-affiliations {
   color: #5c6670;
   display: flex;
