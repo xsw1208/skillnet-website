@@ -107,7 +107,8 @@ a:hover {
   font-family: 'Google Sans', 'Noto Sans', sans-serif;
   font-size: 0.78rem;
   line-height: 1.35;
-  margin-top: 0.15rem;
+  margin-top: -0.35rem;
+  margin-bottom: 0.95rem;
 }
 
 .publication-affiliations {
